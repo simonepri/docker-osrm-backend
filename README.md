@@ -19,6 +19,6 @@ You need to specify those env vars in order to make the startup process successf
 
 ## Usage
 ```bash
-$ docker pull simonepri/osrm-backend-docker
-$ docker run -d -p 5000:5000 --name osrm-api -e OSRM_MAP_NAME="italy" -e OSRM_MAP_URL="http://download.geofabrik.de/europe/italy/centro-latest.osm.pbf" -e OSRM_EXT_PROFILE="car" simonepri/osrm-backend-docker:latest
+$ docker pull simonepri/osrm-backend
+$ docker run -d -p 5000:5000 --name osrm-api -e OSRM_MAP_NAME="italy" -e OSRM_MAP_URL="http://download.geofabrik.de/europe/italy/centro-latest.osm.pbf" -e OSRM_EXT_PROFILE="car" simonepri/osrm-backend:latest
 ```
