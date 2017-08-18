@@ -1,5 +1,5 @@
 # docker-osrm-backend
-> 🛣 The Open Source Routing Machine in a box!
+> 🛣 The Open Source Routing Machine Docker ready!
 
 This image is based on the official [osrm-backend](https://hub.docker.com/r/osrm/osrm-backend/) Docker image with the addition of some awesome features!
 
