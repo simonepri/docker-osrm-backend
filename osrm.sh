@@ -20,8 +20,8 @@ if [ ! -f $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ]; then
     echo "$OSRM_MAP_NAME downloaded to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf ($FILESIZE bytes) bytes"
   fi
   
-  echo "Extracting the Road Network from $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf using $OSRM_PROFILE profile"
-  osrm-extract -p /opt/$OSRM_PROFILE.lua $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf
+  echo "Extracting the Road Network from $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf using $OSRM_EXT_PROFILE profile"
+  osrm-extract -p /opt/$OSRM_EXT_PROFILE.lua $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf
   reteval=$?
   if [ ${reteval} -ne 0 ]; then
     echo "$OSRM_MAP_NAME extraction to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm failed"
@@ -46,6 +46,6 @@ if [ ! -f $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ]; then
 fi
 
 echo "Starting routing engine HTTP server"
-osrm-routed $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm $OSRM_PARAMS &
+osrm-routed $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm $OSRM_API_PARAMS &
 child=$!
 wait "$child"
