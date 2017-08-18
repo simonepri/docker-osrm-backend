@@ -17,7 +17,7 @@ if [ ! -f $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ]; then
       exit 1;
     fi
     FILESIZE=$(stat -c%s "$OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf")
-    echo "$OSRM_MAP_NAME downloaded to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf ($FILESIZE bytes) bytes"
+    echo "$OSRM_MAP_NAME downloaded to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf ($FILESIZE bytes)"
   fi
   
   echo "Extracting the Road Network from $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf using $OSRM_EXT_PROFILE profile"
@@ -28,7 +28,7 @@ if [ ! -f $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ]; then
     exit 1;
   fi
   FILESIZE=$(stat -c%s "$OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm")
-  echo "$OSRM_MAP_NAME extracted to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm ($FILESIZE bytes) bytes"
+  echo "$OSRM_MAP_NAME extracted to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm ($FILESIZE bytes)"
   
   echo "Deleting $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf"
   rm $OSRM_DATA_PATH/$OSRM_MAP_NAME.osm.pbf
@@ -40,7 +40,7 @@ if [ ! -f $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ]; then
     exit 1;
   fi
   FILESIZE=$(stat -c%s "$OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr")
-  echo "$OSRM_MAP_NAME hierarchy precomputed to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ($FILESIZE bytes) bytes"
+  echo "$OSRM_MAP_NAME hierarchy precomputed to $OSRM_DATA_PATH/$OSRM_MAP_NAME.osrm.hsgr ($FILESIZE bytes)"
   
   echo "$OSRM_MAP_NAME.osm.pbf pre-processing ended"
 fi
